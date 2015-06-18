@@ -1,14 +1,42 @@
-<h1>{{model.albumName}}</h1>
-<h2>by {{model.bandName}}</h2>
-<h2>reviewed by: {{model.reviewer}}</h2>
-<h2>Rating: {{model.rating}}</h2>
+<div class="container">
+  <div class="review">
+  <div class="row">
 
-<p>Review: {{model.description}}</p>
+      <div class="col-md-6">
+        <img class="headerPhoto" {{bind-attr src=model.albumCover}}/>
+      </div>
+    <div class="col-md-6">
+      <h1>{{model.albumName}}</h1>
+      <h2>{{model.bandName}}</h2>
+      <h4>Rating: {{model.rating}}</h4>
+      <h4>reviewed by: {{model.reviewer}}</h4>
+      <p>Review: {{model.description}}</p>
+      <br>
+      {{#if isEditing}}
+        {{partial 'album/edit'}}
+        <button {{action 'doneEditing'}}>Done</button>
+      {{else}}
+        <button {{action 'edit'}}>Update Review</button>
+        <button {{action 'delete'}}>Delete</button>
+      {{/if}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Comments:</h4>
 
-{{#if isEditing}}
-  {{partial 'album/edit'}}
-  <button {{action 'doneEditing'}}>Done</button>
-{{else}}
-  <button {{action 'edit'}}>Update Review</button>
-  <button {{action 'delete'}}>Delete</button>
-{{/if}}
+      <p>{{#link-to 'new-comment' this.id class="btn btn-default"}}Add comment{{/link-to}}</p>
+
+      {{#each comments}}
+      <p>
+        {{body}}
+      <br>
+      -{{commentAuthor}}
+      </p>
+      {{/each}}
+
+      {{outlet}}
+    </div>
+  </div>
+</div>

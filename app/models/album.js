@@ -7,5 +7,6 @@ export default DS.Model.extend({
   rating: DS.attr('string'),
   description: DS.attr('string'),
   albumCover: DS.attr('string'),
-  timestamp: DS.attr('date')
+  timestamp: DS.attr('date'),
+  comments: DS.hasMany('comment', {async: true})
 });

@@ -1,0 +1,12 @@
+<form>
+  <div class="form-group">
+    <label for="commentAuthor">Enter your name</label>
+    {{input id="commentAuthor" class="form-control" value=commentAuthor}}
+  </div>
+  <div class="form-group">
+    <label for="body">Enter your comment</label>
+    {{textarea rows="4" id="body" class="form-control" value=body}}
+  </div>
+
+  <button class="btn btn-default" {{action 'save'}}>Add comment</button>
+</form>

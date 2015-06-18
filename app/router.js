@@ -8,7 +8,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('about');
   this.resource('albums');
-  this.resource('album', {path: 'albums/:album_id'});
+  this.resource('album', {path: 'albums/:album_id'}, function() {
+    this.resource('new-comment');
+  });
   this.resource('new-album');
 });
 

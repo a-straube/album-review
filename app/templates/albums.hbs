@@ -1,11 +1,19 @@
-<h1>Album reviews</h1>
+<div class="container">
 
-{{#each album in model}}
+  {{#each album in model}}
 
-  <p> {{#link-to 'album' album.id}}Album: {{album.albumName}}
-                  Band: {{album.bandName}}
-                  Reviewed by: {{album.reviewer}}
-{{/link-to}}</p>
-{{/each}}
-
-{{album.albumName}}
+    <p> {{#link-to 'album' album.id}}
+        <div class="col-md-3">
+          <div class="all-albums">
+            <img class="thumbnail" {{bind-attr src=album.albumCover}}/>
+            {{album.albumName}}
+            <br>
+            {{album.bandName}}
+            <br>
+            Reviewed by {{album.reviewer}}
+            <br>
+          </div>
+        </div>
+  {{/link-to}}</p>
+  {{/each}}
+</div>

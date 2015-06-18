@@ -1,7 +1,44 @@
+.review {
+  padding: 20px;
+  border: solid black;
+  border-width: 2px;
+}
+
+
 body {
   padding-top: 70px;
 }
 
 nav .active {
   font-weight: bold;
+}
+
+.thumbnail {
+  width: 200px;
+}
+
+.headerPhoto {
+  width: 300px;
+}
+
+.reviewcol1 {
+  width: 33%;
+}
+
+.reviewcol1 {
+  width: 67%;
+}
+
+.all-albums img {
+  max-width: 90%;
+  height: 185px;
+  width: 185px;
+  margin: 1em 2% .2em 2%;
+}
+
+.all-albums {
+  width: 90%;
+  height: auto;
+  position: relative;
+  text-align: center;
 }
