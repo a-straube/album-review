@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('about');
+  this.resource('albums');
+  this.resource('new-album');
 });
 
 export default Router;

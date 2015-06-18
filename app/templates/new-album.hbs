@@ -1,0 +1,28 @@
+<form>
+  <div class="form-group">
+    <label for="albumName">Enter the album name</label>
+    {{input id="albumName" class="form-control" value=albumName}}
+  </div>
+  <div class="form-group">
+    <label for="bandName">Enter the band name</label>
+    {{input id="bandName" class="form-control" value=bandName}}
+  </div>
+  <div class="form-group">
+    <label for="reviewer">Enter your name</label>
+    {{input id="reviewer" class="form-control" value=reviewer}}
+  </div>
+  <div class="form-group">
+    <label for="rating">Enter a rating</label>
+    {{input id="rating" class="form-control" value=rating}}
+  </div>
+  <div class="form-group">
+    <label for="description">Enter a review of the album</label>
+    {{input id="description" class="form-control" value=description}}
+  </div>
+  <div class="form-group">
+    <label for="albumCover">Enter a URL of the album artwork</label>
+    {{input id="albumCover" class="form-control" value=albumCover}}
+  </div>
+
+  <button class="btn btn-default" {{action 'save'}}>Add review</button> 
+</form>
