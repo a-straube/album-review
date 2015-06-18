@@ -1,0 +1,11 @@
+<h1>Album reviews</h1>
+
+{{#each album in model}}
+
+  <p> {{#link-to 'album' album.id}}Album: {{album.albumName}}
+                  Band: {{album.bandName}}
+                  Reviewed by: {{album.reviewer}}
+{{/link-to}}</p>
+{{/each}}
+
+{{album.albumName}}
